@@ -1,0 +1,18 @@
+<ion-view title="Inicio" id="page1">
+    <!--ion-nav-buttons side="right" class="has-header"></ion-nav-buttons-->
+    <ion-content padding="true" class="has-header">
+        <div class="item item-input-inset">
+            <button class="button button-icon icon ion-ios-minus-outline" ng-click="data.showDelete = !data.showDelete"></button>
+            <label class="item-input-wrapper">
+                <input type="text" placeholder="Nombre" ng-model="nombre">
+            </label>
+            <button class="button button-icon icon ion-android-add-circle" ng-click="addPersona(nombre)"></button>
+        </div>
+        <ion-list id="inicio-list2" show-delete="data.showDelete">
+            <ion-item ng-repeat="persona in personas" class="item-thumbnail-left">
+                <h2>{{persona.nombre}}</h2>
+                <ion-delete-button class="ion-minus-circled" ng-click="removePersona($index)"></ion-delete-button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
